@@ -7,11 +7,15 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+import datetime
 
 
 ###
 # Routing for your application.
 ###
+
+def format_date_joined(time):
+    return time.strftime("%b, %Y")
 
 @app.route('/')
 def home():
@@ -35,6 +39,14 @@ def send_text_file(file_name):
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
 
+
+@app.route('/profile/')
+def profile() :
+
+    date_joined = datetime.date(2019, 2, 7) 
+    date_joined = "Joined " + format_date_joined(date_joined) # TODO : Test this code thoroghly
+
+    return render_template('profile.html')
 
 @app.after_request
 def add_header(response):
