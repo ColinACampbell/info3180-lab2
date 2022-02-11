@@ -1,11 +1,40 @@
 {% extends "base.html" %}
 {% block main %}
-<div>
-    <div>
-        <h1> Colin Campbell</h1>
-    </div>
-    <div>
-        <h2> Colin Campbell</h2>
+<div class="app-container">
+    <div class="profile-card">
+        <div class="profile-intro">
+            <div class="user-info">
+                <img class="profile-photo" src={{ url_for('static', filename='images/me-colin.jpg') }} width="100" />
+                <h1> Colin Campbell </h1>
+                <p> @dev.colin </p>
+                <p> Portmore, Jamaica </p>
+                <p> {{value}} </p>
+            </div>
+        </div>
+        <div class="profile-content">
+            <div class="profile-body">
+                <div class="user-descripton">
+                    <p> I like coding, but I'm held hostage to complete this assignment for grades</p>
+                </div>
+                <div class="social-stats">
+                    <div class="social-stat">
+                        <p class="number"> 5 </p>
+                        <p> Posts</p>
+                    </div>
+                    <div class="social-stat">
+                        <p class="number"> 2 </p>
+                        <p> Following</p>
+                    </div>
+                    <div class="social-stat">
+                        <p class="number"> 5000 </p>
+                        <p> Followers</p>
+                    </div>
+                </div>
+                <div class="action">
+                    <button class="action-button"> Follow </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

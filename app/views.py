@@ -44,9 +44,10 @@ def send_text_file(file_name):
 def profile() :
 
     date_joined = datetime.date(2019, 2, 7) 
-    date_joined = "Joined " + format_date_joined(date_joined) # TODO : Test this code thoroghly
+    date_joined = "Joined " + format_date_joined(date_joined)
 
-    return render_template('profile.html')
+    print(date_joined)
+    return render_template('profile.html',value=date_joined)
 
 @app.after_request
 def add_header(response):
